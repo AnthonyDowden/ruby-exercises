@@ -9,13 +9,13 @@ class SnakeEyes
 	# Add the total to the output above
 	# Create a class which represents a die and re-structure your program to use this
 	# Create a child class of your ‘die’ which outputs one of the values used in the game ‘Crown and Anchor’ - http://en.wikipedia.org/wiki/Crown_and_Anchor
-	# Create a new program, using your die class above which mimics the game ‘Crown and Anchor’. Ask the user which area they would like to bet on (and how much), simulate the dice roll, and tell them how much they would have won (or lost)!
+	# Create a new program, using your die class above which mimics the game ‘Crown and Anchor’. Ask the user which area they would like to bet on (and how much),
+	# simulate the dice roll, and tell them how much they would have won (or lost)!
 	# Create a new program, using your die class. Using the rules of Yahtzee, allow the user to make multiple throws of the dice and record their score
 	def start_program
-		puts "Welcome to Snake Eyes!"
-		puts "Please chose an option."
-		puts "1) Roll the dice"
-
+		puts "Which game would you like to play?"
+		puts "1) Crown and Anchor"
+		puts "2) Yahtzee"
 		selected_option = gets.chomp
 		handle_option(selected_option)
 	end
@@ -33,8 +33,11 @@ class SnakeEyes
 	end
 
 	def handle_option_1
-		dice = CrownAnchorDice.new
-		puts dice.roll
+
+	end
+
+	def handle_option_2
+
 	end
 
 	def is_number?(value)

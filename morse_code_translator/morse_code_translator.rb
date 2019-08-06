@@ -62,13 +62,9 @@ class MorseCodeTranslator
 			puts "ERROR: Argument was not a string"
 			return
 		end
-		sentence.downcase!
-		words = sentence.split(' ')
-		morse_words = words.map do |word|
-			letters = word.split('')
-			letters.map { |letter| @dictionary[letter] }.join('   ')
-		end
-		morse_words.join('       ')
+		sentence.downcase.split(' ').map do |word|
+			word.split('').map { |letter| @dictionary[letter] }.join('   ')
+		end.join('       ')
 	end
 
 	def translate_to_english(sentence)
