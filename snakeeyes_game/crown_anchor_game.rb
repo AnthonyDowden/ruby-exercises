@@ -12,16 +12,16 @@ class CrownAndAnchorGame
 	end
 
 	def canvas_option
-		@canvas.each { |key, value| puts "#{key}" }
+		@canvas.each {|key, value| puts "#{key}"}
 	end
 
 	def display_canvas
-		@canvas.each {|key,value| puts "#{key}: #{value}"}
+		@canvas.each {|key, value| puts "#{key}: #{value}"}
 	end
 
 	def roll_anchor_dice
-		@roll_result = []; 3.times { @roll_result << @crown_anchor_dice.roll}
-		@roll_result.each {|key, value| puts "#{key}"}
+		@roll_result = []; 3.times {@roll_result << @crown_anchor_dice.roll}
+		@roll_result.each {|key| puts "#{key}"}
 	end
 
 	def users_bets(chosen_canvas, chosen_amount)
@@ -33,6 +33,9 @@ class CrownAndAnchorGame
 	end
 
 	def compare_results
-		puts @canvas.assoc(@roll_result)
+		@roll_result.each do |r|
+			puts "Rolled #{r} - you bet #{@canvas[r]} on it"
+
+		end
 	end
 end
